@@ -54,15 +54,12 @@ module RubyAudit
 
     def check_for_stale_database
       database = Database.new
-      if database.size == 89
-        # bundler-audit 0.4.0 comes bundled with an old verison of
-        # ruby-advisory-db that has 89 advisories and NO advisories for Ruby
-        # or RubyGems. If #size == 89, the database has never been updated.
-        say 'The database must be updated before using RubyAudit', :red
-        exit 1
-      elsif database.stale
-        say 'The database has not been updated in over 7 days', :yellow
-      end
+      return unless database.size == 89
+      # bundler-audit 0.4.0 comes bundled with an old verison of
+      # ruby-advisory-db that has 89 advisories and NO advisories for Ruby
+      # or RubyGems. If #size == 89, the database has never been updated.
+      say 'The database must be updated before using RubyAudit', :red
+      exit 1
     end
   end
 end

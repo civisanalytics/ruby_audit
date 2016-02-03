@@ -24,17 +24,6 @@ module RubyAudit
       end
     end
 
-    def stale
-      if File.directory?(USER_PATH) &&
-         File.exist?(File.join(USER_PATH, '.git'))
-        ts = Time.parse(
-          `cd #{USER_PATH} && git log --date=iso8601 --pretty="%cd" -1`).utc
-        ts < (Date.today - 7).to_time
-      else
-        true
-      end
-    end
-
     protected
 
     def each_advisory_path(&block)
