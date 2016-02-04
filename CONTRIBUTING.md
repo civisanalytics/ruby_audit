@@ -1,6 +1,7 @@
 # Contributing to RubyAudit
 
-We welcome pull requests from everyone!
+We welcome bug reports and pull requests from everyone!
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Getting Started
 
