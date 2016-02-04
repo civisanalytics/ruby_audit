@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/civisanalytics/ruby_audit.svg?branch=master)](https://travis-ci.org/civisanalytics/ruby_audit)
 [![Gem Version](https://badge.fury.io/rb/ruby_audit.svg)](http://badge.fury.io/rb/ruby_audit)
-[![Dependency Status](https://gemnasium.com/civisanalytics/ruby_audit.svg)](https://gemnasium.com/civisanalytics/ruby_audit)
 
 RubyAudit checks your current version of Ruby and RubyGems against known security vulnerabilities (CVEs), alerting you if you are using an insecure version.
 It complements [bundler-audit](https://github.com/rubysec/bundler-audit), providing complete coverage for your Ruby stack.
