@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bundler-audit', '~> 0.4.0'
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'pry', '~> 0.10.3'
-  spec.add_development_dependency 'rake', '~> 10.5'
+  spec.add_development_dependency 'rake', '~> 11.2'
   spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'rubocop', '~> 0.42.0'
   spec.add_development_dependency 'timecop', '~> 0.8.0'
