@@ -23,11 +23,11 @@ module RubyAudit
     end
 
     def scan_ruby(options = {}, &block)
-      if RUBY_PATCHLEVEL < 0
-        version = ruby_version
-      else
-        version = "#{RUBY_VERSION}.#{RUBY_PATCHLEVEL}"
-      end
+      version = if RUBY_PATCHLEVEL < 0
+                  ruby_version
+                else
+                  "#{RUBY_VERSION}.#{RUBY_PATCHLEVEL}"
+                end
       specs = [Version.new(RUBY_ENGINE, version)]
       scan_inner(specs, 'ruby', options, &block)
     end
@@ -43,8 +43,8 @@ module RubyAudit
       # .gsub to separate strings (e.g., 2.1.0dev -> 2.1.0.dev,
       # 2.2.0preview1 -> 2.2.0.preview.1).
       `ruby --version`.split[1]
-        .gsub(/(\d)([a-z]+)/, '\1.\2')
-        .gsub(/([a-z]+)(\d)/, '\1.\2')
+                      .gsub(/(\d)([a-z]+)/, '\1.\2')
+                      .gsub(/([a-z]+)(\d)/, '\1.\2')
     end
 
     def rubygems_version

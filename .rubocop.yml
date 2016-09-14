@@ -11,3 +11,9 @@ Style/Documentation:
 Style/FileName:
   Exclude:
     - 'exe/ruby-audit'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
