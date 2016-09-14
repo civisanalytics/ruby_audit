@@ -59,22 +59,12 @@ module RubyAudit
 
       specs.each do |spec|
         @database.send("check_#{type}".to_sym, spec) do |advisory|
-          unless ignore.include?(cve_id(advisory)) ||
-                 ignore.include?(osvdb_id(advisory))
+          unless ignore.include?(advisory.cve_id) ||
+                 ignore.include?(advisory.osvdb_id)
             yield UnpatchedGem.new(spec, advisory)
           end
         end
       end
-    end
-
-    # Workaround for advisory.cve_id, present in master but not 0.4.0.
-    def cve_id(advisory)
-      "CVE-#{advisory.cve}" if advisory.cve
-    end
-
-    # Workaround for advisory.osvdb_id, present in master but not 0.4.0.
-    def osvdb_id(advisory)
-      "OSVDB-#{advisory.osvdb}" if advisory.osvdb
     end
   end
 end
