@@ -23,11 +23,11 @@ module RubyAudit
     end
 
     def scan_ruby(options = {}, &block)
-      if RUBY_PATCHLEVEL < 0
-        version = ruby_version
-      else
-        version = "#{RUBY_VERSION}.#{RUBY_PATCHLEVEL}"
-      end
+      version = if RUBY_PATCHLEVEL < 0
+                  ruby_version
+                else
+                  "#{RUBY_VERSION}.#{RUBY_PATCHLEVEL}"
+                end
       specs = [Version.new(RUBY_ENGINE, version)]
       scan_inner(specs, 'ruby', options, &block)
     end
@@ -43,8 +43,8 @@ module RubyAudit
       # .gsub to separate strings (e.g., 2.1.0dev -> 2.1.0.dev,
       # 2.2.0preview1 -> 2.2.0.preview.1).
       `ruby --version`.split[1]
-        .gsub(/(\d)([a-z]+)/, '\1.\2')
-        .gsub(/([a-z]+)(\d)/, '\1.\2')
+                      .gsub(/(\d)([a-z]+)/, '\1.\2')
+                      .gsub(/([a-z]+)(\d)/, '\1.\2')
     end
 
     def rubygems_version
@@ -59,22 +59,12 @@ module RubyAudit
 
       specs.each do |spec|
         @database.send("check_#{type}".to_sym, spec) do |advisory|
-          unless ignore.include?(cve_id(advisory)) ||
-                 ignore.include?(osvdb_id(advisory))
+          unless ignore.include?(advisory.cve_id) ||
+                 ignore.include?(advisory.osvdb_id)
             yield UnpatchedGem.new(spec, advisory)
           end
         end
       end
-    end
-
-    # Workaround for advisory.cve_id, present in master but not 0.4.0.
-    def cve_id(advisory)
-      "CVE-#{advisory.cve}" if advisory.cve
-    end
-
-    # Workaround for advisory.osvdb_id, present in master but not 0.4.0.
-    def osvdb_id(advisory)
-      "OSVDB-#{advisory.osvdb}" if advisory.osvdb
     end
   end
 end
