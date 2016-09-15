@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## [1.1.0] - 2016-09-15
+
 ### Added
 
 * Added a matrix build of 2.1, 2.2, and 2.3 to Travis
@@ -30,5 +32,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Initial Release
 
 [Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/civisanalytics/ruby_audit/commit/7535b70412641c888c80d99514b27ba254fb8316
