@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+* Bumped rubocop to 0.50.0
+* Bumped the bundler-audit version to 0.6
+* Bumped the Ruby version for development to 2.4.2
 
 ## [1.1.0] - 2016-09-15
 

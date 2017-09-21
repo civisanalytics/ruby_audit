@@ -5,10 +5,14 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 15
 
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+
 Style/Documentation:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Exclude:
     - 'exe/ruby-audit'
 
