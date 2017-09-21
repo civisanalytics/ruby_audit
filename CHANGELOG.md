@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 * Bumped the bundler-audit version to 0.6
+* Bumped the Ruby version for development to 2.4.2
 
 ## [1.1.0] - 2016-09-15
 
