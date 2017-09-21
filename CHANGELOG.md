@@ -3,10 +3,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Unreleased
-* Bumped rubocop to 0.50.0
-* Bumped the bundler-audit version to 0.6
-* Bumped the Ruby version for development to 2.4.2
+## [Unreleased]
+
+## [1.2.0] - 2017-09-21
+
+### Added
+
+* Added 2.4 to the Travis matrix ([@errm])
+
+### Changed
+
+* Bumped the bundler-audit version to 0.6 ([@errm])
+* Bumped the RuboCop version for development to 0.50 ([@errm])
+* Bumped the Ruby version for development to 2.4.2 ([@errm])
 
 ## [1.1.0] - 2016-09-15
 
@@ -34,7 +43,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/civisanalytics/ruby_audit/commit/7535b70412641c888c80d99514b27ba254fb8316
+
+[@errm]: https://github.com/errm
