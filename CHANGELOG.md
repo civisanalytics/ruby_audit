@@ -5,6 +5,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+* Added 2.5 to the Travis matrix
+
+### Changed
+
+* Bumped the Ruby version for development to 2.5.0
+* Bumped the Travis matrix to 2.2.9, 2.3.6, and 2.4.3
+* Bumped the Pry version for development to 0.11
+* Bumped the Rake version for development to 12
+* Bumped the RuboCop version for development to 0.53
+* Bumped the Timecop verison for development to 0.9
+* RuboCop fixes
+
 ## [1.2.0] - 2017-09-21
 
 ### Added
