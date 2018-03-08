@@ -1,4 +1,4 @@
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ruby_audit/version'
 
@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'bundler-audit', '~> 0.6.0'
   spec.add_development_dependency 'bundler', '~> 1.11'
-  spec.add_development_dependency 'pry', '~> 0.10.3'
-  spec.add_development_dependency 'rake', '~> 11.2'
+  spec.add_development_dependency 'pry', '~> 0.11.3'
+  spec.add_development_dependency 'rake', '~> 12.3'
   spec.add_development_dependency 'rspec', '~> 3.5'
-  spec.add_development_dependency 'rubocop', '~> 0.50.0'
-  spec.add_development_dependency 'timecop', '~> 0.8.0'
+  spec.add_development_dependency 'rubocop', '~> 0.53.0'
+  spec.add_development_dependency 'timecop', '~> 0.9.1'
 end
