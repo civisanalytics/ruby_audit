@@ -42,13 +42,12 @@ module RubyAudit
     def ruby_version
       # .gsub to separate strings (e.g., 2.1.0dev -> 2.1.0.dev,
       # 2.2.0preview1 -> 2.2.0.preview.1).
-      `ruby --version`.split[1]
-                      .gsub(/(\d)([a-z]+)/, '\1.\2')
-                      .gsub(/([a-z]+)(\d)/, '\1.\2')
+      RUBY_VERSION.gsub(/(\d)([a-z]+)/, '\1.\2')
+                  .gsub(/([a-z]+)(\d)/, '\1.\2')
     end
 
     def rubygems_version
-      `gem --version`.strip
+      Gem::VERSION
     end
 
     def scan_inner(specs, type, options = {})
