@@ -19,6 +19,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Bumped the Timecop verison for development to 0.9
 * RuboCop fixes
 
+### Fixed
+
+* [#9](https://github.com/civisanalytics/ruby_audit/pull/9) Do not shell out to sniff ruby and rubygems version
+
 ## [1.2.0] - 2017-09-21
 
 ### Added
