@@ -7,6 +7,7 @@ rvm:
   - 2.4.7
   - 2.5.6
   - 2.6.4
+  - jruby
 branches:
   only:
     - master
