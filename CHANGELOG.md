@@ -7,17 +7,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-* Added 2.5 to the Travis matrix
+* Added 2.5 and 2.6 to the Travis matrix
 
 ### Changed
 
-* Bumped the Ruby version for development to 2.5.0
-* Bumped the Travis matrix to 2.2.9, 2.3.6, and 2.4.3
-* Bumped the Pry version for development to 0.11
-* Bumped the Rake version for development to 12
-* Bumped the RuboCop version for development to 0.53
+* Bumped the Ruby version for development to 2.6.5
+* Bumped the Travis matrix to 2.4.9
+* Bumped the Bundler version for development to 1.17 or 2.0
+* Bumped the Pry version for development to 0.12
+* Bumped the Rake version for development to 13
+* Bumped the Rspec version for development to 3.9
+* Bumped the RuboCop version for development to 0.76
 * Bumped the Timecop verison for development to 0.9
 * RuboCop fixes
+
+### Removed
+
+* Removed 2.1, 2.2, and 2.3 from the Travis matrix
 
 ## [1.2.0] - 2017-09-21
 
