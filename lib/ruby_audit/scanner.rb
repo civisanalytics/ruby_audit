@@ -59,9 +59,7 @@ module RubyAudit
 
       specs.each do |spec|
         @database.send("check_#{type}".to_sym, spec) do |advisory|
-          unless ignore.intersect?(advisory.identifiers.to_set)
-            yield UnpatchedGem.new(spec, advisory)
-          end
+          yield UnpatchedGem.new(spec, advisory) unless ignore.intersect?(advisory.identifiers.to_set)
         end
       end
     end
