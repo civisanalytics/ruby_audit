@@ -59,8 +59,7 @@ module RubyAudit
 
       specs.each do |spec|
         @database.send("check_#{type}".to_sym, spec) do |advisory|
-          unless ignore.include?(advisory.cve_id) ||
-                 ignore.include?(advisory.osvdb_id)
+          unless ignore.intersect?(advisory.identifiers.to_set)
             yield UnpatchedGem.new(spec, advisory)
           end
         end
