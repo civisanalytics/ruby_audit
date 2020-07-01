@@ -5,25 +5,28 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.3.0] - 2020-07-01
+
 ### Added
 
-* Added 2.5 and 2.6 to the Travis matrix
+* Added Ruby 2.5, 2.6, and 2.7 to the Travis matrix
+* Added the ability to ignore an advisory by its GHSA identifier
 
 ### Changed
 
-* Bumped the Ruby version for development to 2.6.5
-* Bumped the Travis matrix to 2.4.9
-* Bumped the Bundler version for development to 1.17 or 2.0
-* Bumped the Pry version for development to 0.12
+* Bumped the bundler-audit version to 0.7
+* Bumped the Ruby version for development to 2.7.1
+* Bumped the Pry version for development to 0.13
 * Bumped the Rake version for development to 13
 * Bumped the Rspec version for development to 3.9
-* Bumped the RuboCop version for development to 0.76
+* Bumped the RuboCop version for development to 0.86
 * Bumped the Timecop verison for development to 0.9
 * RuboCop fixes
 
 ### Removed
 
-* Removed 2.1, 2.2, and 2.3 from the Travis matrix
+* Removed Ruby 2.1 through 2.4 from the Travis matrix
+* Removed the explicit Bundler dependency for development, since it is now included with RubyGems
 
 ## [1.2.0] - 2017-09-21
 
@@ -63,7 +66,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.0...v1.0.1

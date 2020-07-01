@@ -23,10 +23,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'bundler-audit', '~> 0.7.0'
-  spec.add_development_dependency 'bundler', '>= 1.17', '< 2.1'
-  spec.add_development_dependency 'pry', '~> 0.12.2'
+  spec.add_development_dependency 'pry', '~> 0.13.0'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.9'
-  spec.add_development_dependency 'rubocop', '~> 0.76.0'
+  spec.add_development_dependency 'rubocop', '~> 0.86.0'
   spec.add_development_dependency 'timecop', '~> 0.9.1'
 end
