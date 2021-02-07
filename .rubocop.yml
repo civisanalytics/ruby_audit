@@ -1,4 +1,9 @@
-Metrics/LineLength:
+AllCops:
+  TargetRubyVersion: 2.5
+  NewCops: disable
+  SuggestExtensions: false
+
+Layout/LineLength:
   Exclude:
     - 'ruby_audit.gemspec'
 
@@ -6,7 +11,7 @@ Metrics/MethodLength:
   Max: 15
 
 Metrics/BlockLength:
-  ExcludedMethods:
+  IgnoredMethods:
     - describe
 
 Style/Documentation:
