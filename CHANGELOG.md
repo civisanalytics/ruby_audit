@@ -7,14 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-* Added Ruby 3.0 to the Travis matrix
-
-### Changed
-
-* Bumped the Ruby version for development to 3.0.0
-* Bumped the RuboCop version for development to 1.9
-* RuboCop fixes
-* Enabled rspec warnings
+* Added Ruby 3.0 to the Travis matrix, no changes needed
 
 ## [1.3.0] - 2020-07-01
 
