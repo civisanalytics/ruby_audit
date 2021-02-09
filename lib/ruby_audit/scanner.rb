@@ -54,7 +54,7 @@ module RubyAudit
     end
 
     def scan_inner(specs, type, options = {})
-      return enum_for(__method__, options) unless block_given?
+      return enum_for(__method__, specs, type, options) unless block_given?
 
       ignore = Set[]
       ignore += options[:ignore] if options[:ignore]
