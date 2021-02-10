@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+* Added Ruby 3.0 to the Travis matrix, no changes needed
+
 ## [1.3.0] - 2020-07-01
 
 ### Added
