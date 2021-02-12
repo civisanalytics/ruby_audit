@@ -1,3 +1,5 @@
+require 'bundler/audit/database'
+
 module RubyAudit
   class Database < Bundler::Audit::Database
     def advisories_for(name, type)

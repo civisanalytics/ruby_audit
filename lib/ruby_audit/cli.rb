@@ -1,5 +1,10 @@
+require 'thor'
+
 module RubyAudit
-  class CLI < Bundler::Audit::CLI
+  class CLI < ::Thor
+    default_task :check
+    map '--version' => :version
+
     desc 'check', 'Checks Ruby and RubyGems for insecure versions'
     method_option :ignore, type: :array, aliases: '-i'
     method_option :no_update, type: :boolean, aliases: '-n'
