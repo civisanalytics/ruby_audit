@@ -7,7 +7,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+* Require bundler-audit 0.8
 * Added Ruby 3.0 to the Travis matrix, no changes needed
+
+### Removed
+
+* Removed support for bundler-audit 0.7
 
 ## [1.3.0] - 2020-07-01
 
