@@ -1,4 +1,3 @@
-require 'bundler/audit/cli'
 require 'ruby_audit/cli'
 require 'ruby_audit/database'
 require 'ruby_audit/scanner'

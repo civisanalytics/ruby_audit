@@ -5,7 +5,7 @@ require 'timecop'
 
 RSpec.configure do |config|
   config.before(:each) do
-    stub_const('Bundler::Audit::Database::VENDORED_PATH',
+    stub_const('Bundler::Audit::Database::DEFAULT_PATH',
                File.join(File.dirname(__FILE__), '..', 'vendor',
                          'ruby-advisory-db'))
   end

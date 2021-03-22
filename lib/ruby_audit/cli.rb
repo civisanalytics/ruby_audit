@@ -1,5 +1,10 @@
+require 'thor'
+
 module RubyAudit
-  class CLI < Bundler::Audit::CLI
+  class CLI < ::Thor
+    default_task :check
+    map '--version' => :version
+
     desc 'check', 'Checks Ruby and RubyGems for insecure versions'
     method_option :ignore, type: :array, aliases: '-i'
     method_option :no_update, type: :boolean, aliases: '-n'
@@ -51,6 +56,72 @@ module RubyAudit
     end
 
     private
+
+    def say(message = '', color = nil)
+      color = nil unless $stdout.tty?
+      super(message.to_s, color)
+    end
+
+    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/CyclomaticComplexity
+    # rubocop:disable Metrics/MethodLength
+    # rubocop:disable Metrics/PerceivedComplexity
+    def print_advisory(gem, advisory)
+      say 'Name: ', :red
+      say gem.name
+
+      say 'Version: ', :red
+      say gem.version
+
+      say 'Advisory: ', :red
+
+      if advisory.cve
+        say advisory.cve_id
+      elsif advisory.osvdb
+        say advisory.osvdb_id
+      elsif advisory.ghsa
+        say advisory.ghsa_id
+      end
+
+      say 'Criticality: ', :red
+      case advisory.criticality
+      when :none     then say 'None'
+      when :low      then say 'Low'
+      when :medium   then say 'Medium', :yellow
+      when :high     then say 'High', %i[red bold]
+      when :critical then say 'Critical', %i[red bold]
+      else                say 'Unknown'
+      end
+
+      say 'URL: ', :red
+      say advisory.url
+
+      if options.verbose?
+        say 'Description:', :red
+        say
+
+        print_wrapped advisory.description, indent: 2
+        say
+      else
+
+        say 'Title: ', :red
+        say advisory.title
+      end
+
+      if advisory.patched_versions.empty?
+        say 'Solution: ', :red
+        say 'remove or disable this gem until a patch is available!', %i[red bold]
+      else
+        say 'Solution: upgrade to ', :red
+        say advisory.patched_versions.join(', ')
+      end
+
+      say
+    end
+    # rubocop:enable Metrics/PerceivedComplexity
+    # rubocop:enable Metrics/MethodLength
+    # rubocop:enable Metrics/CyclomaticComplexity
+    # rubocop:enable Metrics/AbcSize
 
     def check_for_stale_database
       database = Database.new

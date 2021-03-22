@@ -1,5 +1,8 @@
+require 'bundler/audit/results/unpatched_gem'
+require 'set'
+
 module RubyAudit
-  class Scanner < Bundler::Audit::Scanner
+  class Scanner
     class Version
       def initialize(name, version)
         @name = name
@@ -9,11 +12,9 @@ module RubyAudit
       attr_reader :name, :version
     end
 
-    # rubocop:disable Lint/MissingSuper
     def initialize
       @database = Database.new
     end
-    # rubocop:enable Lint/MissingSuper
 
     def scan(options = {}, &block)
       return enum_for(__method__, options) unless block
@@ -61,7 +62,9 @@ module RubyAudit
 
       specs.each do |spec|
         @database.send("check_#{type}".to_sym, spec) do |advisory|
-          yield UnpatchedGem.new(spec, advisory) unless ignore.intersect?(advisory.identifiers.to_set)
+          unless ignore.intersect?(advisory.identifiers.to_set)
+            yield Bundler::Audit::Results::UnpatchedGem.new(spec, advisory)
+          end
         end
       end
     end
