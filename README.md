@@ -27,6 +27,11 @@ Or install it yourself as:
 
     $ gem install ruby_audit
 
+Because bundler-audit requires bundler, RubyAudit requires bundler as a transitive
+dependency.  If you don't intend to run RubyAudit in the production environment, you
+may selectively install it in your development and test environments by using
+[Bundler groups](https://bundler.io/guides/groups.html).
+
 ## Usage
 
 To check your current version of Ruby and RubyGems:
