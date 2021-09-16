@@ -5,7 +5,7 @@ require 'ruby_audit/version'
 Gem::Specification.new do |spec|
   spec.name          = 'ruby_audit'
   spec.version       = RubyAudit::VERSION
-  spec.authors       = ['Jeff Cousens, Mike Saelim']
+  spec.authors       = ['Jeff Cousens, Mike Saelim', 'John Zhang']
   spec.email         = ['opensource@civisanalytics.com']
 
   spec.summary       = 'Checks Ruby and RubyGems against known vulnerabilities.'
