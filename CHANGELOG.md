@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+* Require bundler-audit 0.9.0.1
+
 ## [2.0.0] - 2021-03-22
 
 ### Added
