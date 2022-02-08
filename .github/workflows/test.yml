@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        ruby_version: [2.5, 2.6, 2.7, '3.0', 3.1]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby_version }}
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install --jobs=3 --retry=3
+      - name: Initialize submodule
+        run: git submodule update --init
+      - name: Run tests
+        run: bundle exec rake
