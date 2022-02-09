@@ -1,6 +1,6 @@
 # RubyAudit
 
-![Build Status](https://github.com/DARIAEngineering/ruby_audit/actions/workflows/test.yml/badge.svg)
+![Build Status](https://github.com/civisanalytics/ruby_audit/actions/workflows/test.yml/badge.svg)
 [![Gem Version](https://badge.fury.io/rb/ruby_audit.svg)](http://badge.fury.io/rb/ruby_audit)
 
 RubyAudit checks your current version of Ruby and RubyGems against known security vulnerabilities (CVEs), alerting you if you are using an insecure version.

@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
                        '(CVEs), alerting you if you are using an insecure ' \
                        'version. It complements bundler-audit, providing ' \
                        'complete coverage for your Ruby stack.'
-  spec.homepage      = 'https://github.com/dariaengineering/ruby_audit'
+  spec.homepage      = 'https://github.com/civisanalytics/ruby_audit'
   spec.license       = 'GPL-3.0-or-later'
 
   spec.required_ruby_version = ['>= 2.5', '< 3.2']
