@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.1.0] - 2022-02-23
+
+### Added
+
+* Support for ruby 3.1
+* Require bundler-audit >= 0.9
+
 ## [2.0.0] - 2021-03-22
 
 ### Added
