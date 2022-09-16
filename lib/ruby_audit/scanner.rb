@@ -26,7 +26,9 @@ module RubyAudit
     end
 
     def scan_ruby(options = {}, &block)
-      version = if RUBY_PATCHLEVEL < 0
+      version = if RUBY_ENGINE == "jruby"
+                  "#{JRUBY_VERSION}"
+                elsif RUBY_PATCHLEVEL < 0
                   ruby_version
                 else
                   "#{RUBY_VERSION}.#{RUBY_PATCHLEVEL}"
