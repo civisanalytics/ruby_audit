@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+* Support for Ruby 3.2
+
 ## [2.1.0] - 2022-02-23
 
 ### Added
