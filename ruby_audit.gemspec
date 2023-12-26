@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/civisanalytics/ruby_audit'
   spec.license       = 'GPL-3.0-or-later'
 
-  spec.required_ruby_version = ['>= 2.5', '< 3.3']
+  spec.required_ruby_version = ['>= 2.5', '< 3.4']
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
