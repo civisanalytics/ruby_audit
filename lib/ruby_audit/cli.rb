@@ -12,8 +12,6 @@ module RubyAudit
     def check
       update unless options[:no_update]
 
-      check_for_stale_database
-
       scanner = Scanner.new
       vulnerable = false
 
@@ -30,7 +28,6 @@ module RubyAudit
       end
     end
 
-    # Copied from bundler-audit master. Not present in 0.4.0.
     desc 'update', 'Updates the ruby-advisory-db'
     def update
       say 'Updating ruby-advisory-db ...'
@@ -122,16 +119,5 @@ module RubyAudit
     # rubocop:enable Metrics/MethodLength
     # rubocop:enable Metrics/CyclomaticComplexity
     # rubocop:enable Metrics/AbcSize
-
-    def check_for_stale_database
-      database = Database.new
-      return unless database.size == 89
-
-      # bundler-audit 0.4.0 comes bundled with an old verison of
-      # ruby-advisory-db that has 89 advisories and NO advisories for Ruby
-      # or RubyGems. If #size == 89, the database has never been updated.
-      say 'The database must be updated before using RubyAudit', :red
-      exit 1
-    end
   end
 end
