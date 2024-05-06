@@ -36,8 +36,8 @@ module RubyAudit
     end
 
     def scan_rubygems(options = {}, &block)
-      specs = [Version.new('rubygems', rubygems_version)]
-      scan_inner(specs, 'library', options, &block)
+      specs = [Version.new('rubygems-update', rubygems_version)]
+      scan_inner(specs, 'rubygems', options, &block)
     end
 
     private

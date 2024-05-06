@@ -14,8 +14,8 @@ module RubyAudit
       check(ruby, 'rubies', &block)
     end
 
-    def check_library(library, &block)
-      check(library, 'libraries', &block)
+    def check_rubygems(rubygems, &block)
+      check(rubygems, 'gems', &block)
     end
 
     def check(object, type = 'gems')
@@ -29,8 +29,7 @@ module RubyAudit
     protected
 
     def each_advisory_path(&block)
-      Dir.glob(File.join(@path, '{gems,libraries,rubies}', '*', '*.yml'),
-               &block)
+      Dir.glob(File.join(@path, '{gems,rubies}', '*', '*.yml'), &block)
     end
 
     def each_advisory_path_for(name, type = 'gems', &block)
