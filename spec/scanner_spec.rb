@@ -18,13 +18,13 @@ describe RubyAudit::Scanner do
       expect(subject.all? do |result|
                result.advisory.vulnerable?(result.gem.version)
              end).to be_truthy
-      expect(subject.map { |r| r.advisory.id }).to include('OSVDB-120541')
+      expect(subject.map { |r| r.advisory.id }).to include('CVE-2015-1855')
     end
 
     it 'respects patch level' do
       stub_const('RUBY_VERSION', '1.9.3')
       stub_const('RUBY_PATCHLEVEL', 392)
-      expect(subject.map { |r| r.advisory.id }).to include('OSVDB-113747')
+      expect(subject.map { |r| r.advisory.id }).to include('CVE-2014-8080')
     end
 
     it 'handles preview versions' do
@@ -32,14 +32,14 @@ describe RubyAudit::Scanner do
       stub_const('RUBY_PATCHLEVEL', -1)
       allow_any_instance_of(RubyAudit::Scanner)
         .to receive(:ruby_version).and_return('2.1.0.dev')
-      expect(subject.map { |r| r.advisory.id }).to include('OSVDB-100113')
+      expect(subject.map { |r| r.advisory.id }).to include('CVE-2013-4164')
     end
 
     context 'when the :ignore option is given' do
-      subject { scanner.scan(ignore: ['OSVDB-120541']) }
+      subject { scanner.scan(ignore: ['CVE-2015-1855']) }
 
       it 'should ignore the specified advisories' do
-        expect(subject.map { |r| r.advisory.id }).not_to include('OSVDB-120541')
+        expect(subject.map { |r| r.advisory.id }).not_to include('CVE-2015-1855')
       end
     end
   end
