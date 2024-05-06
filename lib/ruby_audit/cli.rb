@@ -42,14 +42,16 @@ module RubyAudit
         say 'Skipping update', :yellow
       end
 
-      puts "ruby-advisory-db: #{Database.new.size} advisories"
+      database = Database.new
+      puts "ruby-advisory-db: #{database.size} advisories, " \
+           "last updated #{database.last_updated_at.utc}"
     end
 
     desc 'version', 'Prints the ruby-audit version'
     def version
       database = Database.new
-      puts "#{File.basename($PROGRAM_NAME)} #{VERSION} "\
-           "(advisories: #{database.size})"
+      puts "#{File.basename($PROGRAM_NAME)} #{VERSION} " \
+           "(advisories: #{database.size}, last updated: #{database.last_updated_at.utc})"
     end
 
     private
