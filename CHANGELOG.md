@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Removed
+
+* [#34](https://github.com/civisanalytics/ruby_audit/pull/34)
+Removed check for stale database that no longer does anything
+
 ### Fixed
 
 * [#35](https://github.com/civisanalytics/ruby_audit/pull/35)
