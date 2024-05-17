@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe RubyAudit::Database do
-  describe '#check_library' do
-    let(:library) { RubyAudit::Scanner::Version.new('rubygems', '2.4.5') }
+  describe '#check_rubygems' do
+    let(:rubygems) { RubyAudit::Scanner::Version.new('rubygems-update', '2.4.5') }
 
     context 'when given a block' do
-      it 'should yield every advisory affecting the library' do
+      it 'should yield every advisory affecting the rubygems version' do
         advisories = []
 
-        subject.check_library(library) do |advisory|
+        subject.check_rubygems(rubygems) do |advisory|
           advisories << advisory
         end
 
@@ -17,14 +17,14 @@ describe RubyAudit::Database do
                  advisory.is_a?(Bundler::Audit::Advisory)
                end).to be_truthy
         expect(advisories.map(&:id)).to include('CVE-2015-3900')
-        expect(advisories.map(&:path).reject { |p| p =~ /libraries/ })
+        expect(advisories.map(&:path).reject { |p| p =~ /rubygems-update/ })
           .to be_empty
       end
     end
 
     context 'when given no block' do
       it 'should return an Enumerator' do
-        expect(subject.check_library(library)).to be_kind_of(Enumerable)
+        expect(subject.check_rubygems(rubygems)).to be_kind_of(Enumerable)
       end
     end
   end
@@ -44,7 +44,7 @@ describe RubyAudit::Database do
         expect(advisories.all? do |advisory|
                  advisory.is_a?(Bundler::Audit::Advisory)
                end).to be_truthy
-        expect(advisories.map(&:id)).to include('OSVDB-120541')
+        expect(advisories.map(&:id)).to include('CVE-2015-1855')
         expect(advisories.map(&:path).reject { |p| p =~ /rubies/ }).to be_empty
       end
     end

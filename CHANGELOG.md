@@ -7,7 +7,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 
-* Removed check for stale database that no longer does anything
+* [#34](https://github.com/civisanalytics/ruby_audit/pull/34)
+Removed check for stale database that no longer does anything
+
+### Fixed
+
+* [#35](https://github.com/civisanalytics/ruby_audit/pull/35)
+Look for rubygems advisories in the correct directory of the ruby-advisory-db
 
 ## [2.3.0] - 2024-01-10
 
