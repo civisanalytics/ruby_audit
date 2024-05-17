@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.3.1] - 2024-05-17
+
 ### Removed
 
 * [#34](https://github.com/civisanalytics/ruby_audit/pull/34)
