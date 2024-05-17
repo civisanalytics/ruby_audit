@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+* [#35](https://github.com/civisanalytics/ruby_audit/pull/35)
+Look for rubygems advisories in the correct directory of the ruby-advisory-db
+
+## [2.3.0] - 2024-01-10
+
 ### Added
 
 * Support for Ruby 3.3
@@ -94,8 +101,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v2.0.0...HEAD
-[1.3.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.3.0...v2.0.0
+[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.0...HEAD
+[2.3.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.2.0...v2.3.0
+[2.2.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.3.0...v2.0.0
 [1.3.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/civisanalytics/ruby_audit/compare/v1.0.1...v1.1.0
