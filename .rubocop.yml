@@ -1,7 +1,10 @@
 AllCops:
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 3.1
   NewCops: enable
   SuggestExtensions: false
+
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec
 
 Layout/LineLength:
   Exclude:
@@ -11,7 +14,7 @@ Metrics/MethodLength:
   Max: 15
 
 Metrics/BlockLength:
-  IgnoredMethods:
+  AllowedMethods:
     - describe
 
 Style/Documentation:

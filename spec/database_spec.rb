@@ -17,7 +17,7 @@ describe RubyAudit::Database do
                  advisory.is_a?(Bundler::Audit::Advisory)
                end).to be_truthy
         expect(advisories.map(&:id)).to include('CVE-2015-3900')
-        expect(advisories.map(&:path).reject { |p| p =~ /rubygems-update/ })
+        expect(advisories.map(&:path).grep_v(/rubygems-update/))
           .to be_empty
       end
     end
@@ -45,7 +45,7 @@ describe RubyAudit::Database do
                  advisory.is_a?(Bundler::Audit::Advisory)
                end).to be_truthy
         expect(advisories.map(&:id)).to include('CVE-2015-1855')
-        expect(advisories.map(&:path).reject { |p| p =~ /rubies/ }).to be_empty
+        expect(advisories.map(&:path).grep_v(/rubies/)).to be_empty
       end
     end
 
