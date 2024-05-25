@@ -11,7 +11,7 @@ Metrics/MethodLength:
   Max: 15
 
 Metrics/BlockLength:
-  IgnoredMethods:
+  AllowedMethods:
     - describe
 
 Style/Documentation:
