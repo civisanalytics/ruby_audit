@@ -61,7 +61,7 @@ module RubyAudit
       ignore += options[:ignore] if options[:ignore]
 
       specs.each do |spec|
-        @database.send("check_#{type}".to_sym, spec) do |advisory|
+        @database.send(:"check_#{type}", spec) do |advisory|
           unless ignore.intersect?(advisory.identifiers.to_set)
             yield Bundler::Audit::Results::UnpatchedGem.new(spec, advisory)
           end
