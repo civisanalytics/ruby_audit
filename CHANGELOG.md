@@ -5,6 +5,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+* Bumped Rubocop dependency to 1.64.0
+* Require MFA for rubygems operations
+
+### Removed
+
+* Removed support for Ruby 2.5 through 3.0
+* Removed Timecop dependency
+
 ## [2.3.1] - 2024-05-17
 
 ### Removed
@@ -108,7 +118,8 @@ Look for rubygems advisories in the correct directory of the ruby-advisory-db
 
 * Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.0...HEAD
+[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.1...HEAD
+[2.3.1]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.0...v2.3.1
 [2.3.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.0.0...v2.1.0

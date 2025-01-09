@@ -57,7 +57,7 @@ $ ruby-audit check -n
 
 After checking out the repo, run `bin/setup` to install dependencies.
 You'll also want to run `git submodule update --init` to populate the ruby-advisory-db
-submodule in `/vendor` that is used for testing. Then, run `rake spec` to run the tests.
+submodule in `/vendor` that is used for testing. Then, run `rake` to run linting and tests.
 You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 The database in `/vendor/ruby-advisory-db` is only used as a fixture for unit tests.
