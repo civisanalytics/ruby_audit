@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## 3.0.0 - 2025-01-09
+## [3.0.0] - 2025-01-09
 
 ### Changed
 
@@ -120,7 +120,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Initial Release
 
-[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.1...HEAD
+[Unreleased]: https://github.com/civisanalytics/ruby_audit/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.1...v3.0.0
 [2.3.1]: https://github.com/civisanalytics/ruby_audit/compare/v2.3.0...v2.3.1
 [2.3.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/civisanalytics/ruby_audit/compare/v2.1.0...v2.2.0
