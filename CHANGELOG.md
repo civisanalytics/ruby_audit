@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+* Use JRUBY_VERSION when checking jruby engine
+
 ## [3.1.0] - 2026-01-07
 
 ### Added

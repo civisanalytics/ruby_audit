@@ -25,14 +25,16 @@ module RubyAudit
       self
     end
 
-    def scan_ruby(options = {}, &)
-      version = if RUBY_PATCHLEVEL < 0
+    def scan_ruby(options = {}, &block)
+      version = if RUBY_ENGINE == "jruby"
+                  "#{JRUBY_VERSION}"
+                elsif RUBY_PATCHLEVEL < 0
                   ruby_version
                 else
                   "#{RUBY_VERSION}.#{RUBY_PATCHLEVEL}"
                 end
       specs = [Version.new(RUBY_ENGINE, version)]
-      scan_inner(specs, 'ruby', options, &)
+      scan_inner(specs, 'ruby', options, &block)
     end
 
     def scan_rubygems(options = {}, &)
